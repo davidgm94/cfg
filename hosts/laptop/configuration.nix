@@ -127,11 +127,18 @@
     binutils
     llvmPackages_16.bintools
     capstone
-    python3
     qbittorrent
     xclip
     tokei
+    tree
+    file
+    patchelf
+    nix-index
+    vmware-workstation
+    python3
   ];
+
+  virtualisation.vmware.host.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
