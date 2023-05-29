@@ -34,6 +34,20 @@
 					}
 				];
 			};
+			desktop-puebla = lib.nixosSystem {
+				inherit system;
+				modules = [
+					./hosts/desktop-puebla/configuration.nix
+					home-manager.nixosModules.home-manager {
+						home-manager.useGlobalPkgs = true;
+						home-manager.useUserPackages = true;
+						home-manager.users.david = { 
+							imports = [ ./home/configuration.nix ];
+						};
+						home-manager.users.david.home.stateVersion = "22.05";
+					}
+				];
+			};
 		};
 	};
 }
