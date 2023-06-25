@@ -20,6 +20,8 @@
             zt = "zig build test";
             cdr = "cd ~/dev/rise";
             cdn = "cd ~/nix";
+            cdb = "cd ~/dev/barrelfish";
+            cdz = "cd ~/dev/zig";
         };
     };
 

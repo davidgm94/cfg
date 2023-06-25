@@ -13,7 +13,6 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -24,6 +23,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.networkmanager.insertNameservers = [ "8.8.8.8" ];
 
   # Set your time zone.
   time.timeZone = "America/Mexico_City";
@@ -170,6 +170,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.11"; # Did you read the comment?
+  system.stateVersion = "23.05"; # Did you read the comment?
 
 }

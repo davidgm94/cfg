@@ -30,7 +30,7 @@
 						home-manager.users.david = { 
 							imports = [ ./home/configuration.nix ];
 						};
-						home-manager.users.david.home.stateVersion = "22.05";
+						home-manager.users.david.home.stateVersion = "23.05";
 					}
 				];
 			};
@@ -44,7 +44,7 @@
 						home-manager.users.david = { 
 							imports = [ ./home/configuration.nix ];
 						};
-						home-manager.users.david.home.stateVersion = "22.05";
+						home-manager.users.david.home.stateVersion = "23.05";
 					}
 				];
 			};
