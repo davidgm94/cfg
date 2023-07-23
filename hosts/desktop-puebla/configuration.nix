@@ -66,6 +66,8 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  hardware.bluetooth.enable = true;
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -82,6 +84,7 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -106,8 +109,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     firefox
+    libreoffice
     kate
-    google-chrome
     git
     xorg.xwininfo
     neovim
@@ -125,7 +128,6 @@
     telegram-desktop
     signal-desktop
     binutils
-    llvmPackages_16.bintools
     capstone
     qbittorrent
     xclip
@@ -136,9 +138,20 @@
     nix-index
     vmware-workstation
     python3
-    microsoft-edge
     bitwarden
-  ];
+    cmake
+    ninja
+    poppler_utils
+    teamviewer
+    config.boot.kernelPackages.perf
+  ]
+  ++ (with llvmPackages_16;
+          [
+          bintools
+          clang
+          ]);
+
+  services.teamviewer.enable = true;
 
   virtualisation.vmware.host.enable = true;
 

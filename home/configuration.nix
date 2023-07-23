@@ -5,12 +5,17 @@
         packages = [
         ];
         sessionPath = [
+            "$HOME/dev/zig/build-release/stage3/bin"
             "$HOME/dev/zls/zig-out/bin"
         ];
+        sessionVariables = {
+            CMAKE_GENERATOR = "Ninja";
+        };
         shellAliases = {
             gs = "git status";
             gd = "git diff";
             ga =  "git add";
+            gl = "git log";
             gco = "git commit";
             gpl = "git pull";
             gps = "git push";
